@@ -1,50 +1,114 @@
-# Welcome to your Expo app 👋
+📱 SpendWise
+SpendWise is a modern and intuitive personal expense tracking app built using React Native and Expo. Designed to help users manage their finances better, the app allows you to:
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Track expenses and income
 
-## Get started
+Organize finances by creating multiple wallets (e.g., groceries, rent, travel)
 
-1. Install dependencies
+Upload receipts with image capture support
 
-   ```bash
-   npm install
-   ```
+Store images efficiently using Cloudinary CDN
 
-2. Start the app
+🚀 Features
+✅ Multi-Wallet Support: Create and manage multiple wallets to organize expenses and income across categories.
 
-   ```bash
-   npx expo start
-   ```
+📊 Transaction Tracker: Add, edit, and view expense and income entries by category and date.
 
-In the output, you'll find options to open the app in a
+🧾 Receipt Upload: Capture or upload receipts for each transaction as visual proof.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+☁️ Cloudinary Integration: Efficient and fast cloud storage for all uploaded images.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+📱 Cross-Platform: Runs on Android, iOS, and Web using Expo Go.
 
-## Get a fresh project
+🛠️ Tech Stack
+React Native (via Expo Go)
 
-When you're ready, run:
+Cloudinary (for image storage)
 
-```bash
-npm run reset-project
-```
+React Navigation (for routing and navigation)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Expo MediaLibrary & ImagePicker (for image upload)
 
-## Learn more
+AsyncStorage / SecureStore (for local data storage)
 
-To learn more about developing your project with Expo, look at the following resources:
+📦 Getting Started
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/spendwise-app.git
+cd spendwise-app
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Run the App
+bash
+Copy
+Edit
+npx expo start
+Use the QR code to open in Expo Go on your mobile device
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Or press a for Android emulator, i for iOS simulator
 
-## Join the community
+📁 Project Structure
+bash
+Copy
+Edit
+spendwise-app/
+│
+├── app/                  # Screens and navigation
+├── assets/               # Images, fonts
+├── components/           # Reusable UI components
+├── constants/            # Color themes, global styles
+├── utils/                # Utility functions, Cloudinary config
+├── App.js                # Entry point
+└── package.json
+☁️ Cloudinary Setup
+Sign up at Cloudinary
 
-Join our community of developers creating universal apps.
+Create a cloud
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Save your Cloud name, API key, and API secret
+
+Configure them in your .env file or a secure constants file:
+
+js
+Copy
+Edit
+// utils/cloudinary.js
+export const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/<cloud_name>/image/upload';
+export const CLOUDINARY_UPLOAD_PRESET = '<upload_preset>';
+📸 Receipt Upload Flow
+User selects or captures a receipt image
+
+Image is uploaded to Cloudinary
+
+The secure URL is stored with the transaction
+
+On viewing the transaction, image is fetched and displayed
+
+🛡️ Security
+No sensitive API keys are exposed in the frontend
+
+All image uploads use unsigned presets
+
+✅ Future Enhancements
+Add monthly budget limits per wallet
+
+Export expenses to CSV
+
+Add OCR for extracting data from receipts
+
+Enable authentication with Firebase/Auth0
+
+🙌 Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+
+📚 Learn More
+Expo Documentation
+
+Cloudinary Docs
+
+React Native Docs
